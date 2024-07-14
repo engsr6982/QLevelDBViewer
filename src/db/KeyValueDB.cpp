@@ -41,7 +41,10 @@ public:
         }
     }
 
-    ~KeyValueDBImpl() { delete options.filter_policy; }
+    ~KeyValueDBImpl() {
+        delete options.filter_policy;
+        delete db;
+    }
 };
 
 KeyValueDB::KeyValueDB(std::filesystem::path const& path, bool createIfMiss, bool fixIfError, int bloomFilterBit) {

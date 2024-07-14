@@ -38,6 +38,9 @@
        <height>461</height>
       </rect>
      </property>
+     <property name="alternatingRowColors">
+      <bool>true</bool>
+     </property>
     </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox_2">
@@ -52,7 +55,7 @@
     <property name="title">
      <string>值</string>
     </property>
-    <widget class="QTextEdit" name="mValueText">
+    <widget class="QTextBrowser" name="mValueText">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -60,9 +63,6 @@
        <width>471</width>
        <height>461</height>
       </rect>
-     </property>
-     <property name="readOnly">
-      <bool>true</bool>
      </property>
     </widget>
    </widget>
@@ -80,25 +80,7 @@
     <property name="title">
      <string>文件</string>
     </property>
-    <widget class="QMenu" name="mMenuBar_File_Import">
-     <property name="title">
-      <string>导入</string>
-     </property>
-     <addaction name="mMenuBar_File_Import_FromTxt"/>
-    </widget>
-    <widget class="QMenu" name="mMenuBar_File_Export">
-     <property name="title">
-      <string>导出</string>
-     </property>
-     <addaction name="mMenuBar_File_Export_ToTxt"/>
-     <addaction name="mMenuBar_File_Export_ToJson"/>
-    </widget>
     <addaction name="mMenuBar_File_OpenDB"/>
-    <addaction name="mMenuBar_File_OpenDB_ReadOnly"/>
-    <addaction name="separator"/>
-    <addaction name="mMenuBar_File_Import"/>
-    <addaction name="mMenuBar_File_Export"/>
-    <addaction name="separator"/>
     <addaction name="mMenuBar_File_CloseDB"/>
     <addaction name="mMenuBar_File_Exit"/>
    </widget>
@@ -123,44 +105,9 @@
    <addaction name="mMenuBar_Edit"/>
    <addaction name="mMenuBar_About"/>
   </widget>
-  <action name="mBar_File_NewDB">
-   <property name="text">
-    <string>新建数据库</string>
-   </property>
-  </action>
-  <action name="action">
-   <property name="text">
-    <string>导出为文本</string>
-   </property>
-  </action>
   <action name="mMenuBar_File_OpenDB">
    <property name="text">
     <string>打开数据库</string>
-   </property>
-  </action>
-  <action name="mMenuBar_File_OpenDB_ReadOnly">
-   <property name="text">
-    <string>打开数据库(只读)</string>
-   </property>
-  </action>
-  <action name="mMenuBar_File_Import_FromTxt">
-   <property name="text">
-    <string>从文件导入</string>
-   </property>
-  </action>
-  <action name="mMenuBar_File_Export_ToTxt">
-   <property name="text">
-    <string>导出为.txt</string>
-   </property>
-  </action>
-  <action name="mMenuBar_File_Export_ToJson">
-   <property name="text">
-    <string>导出为json</string>
-   </property>
-  </action>
-  <action name="action_9">
-   <property name="text">
-    <string>导出全部</string>
    </property>
   </action>
   <action name="mMenuBar_File_CloseDB">
