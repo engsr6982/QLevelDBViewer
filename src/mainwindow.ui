@@ -6,25 +6,203 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>830</width>
+    <height>540</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>QLevelDBViewer</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <property name="documentMode">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>281</width>
+      <height>491</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>键</string>
+    </property>
+    <widget class="QListWidget" name="mKeyList">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>256</width>
+       <height>461</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>10</y>
+      <width>491</width>
+      <height>491</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>值</string>
+    </property>
+    <widget class="QTextEdit" name="mValueText">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>471</width>
+       <height>461</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>830</width>
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="mMenuBar_File">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <widget class="QMenu" name="mMenuBar_File_Import">
+     <property name="title">
+      <string>导入</string>
+     </property>
+     <addaction name="mMenuBar_File_Import_FromTxt"/>
+    </widget>
+    <widget class="QMenu" name="mMenuBar_File_Export">
+     <property name="title">
+      <string>导出</string>
+     </property>
+     <addaction name="mMenuBar_File_Export_ToTxt"/>
+     <addaction name="mMenuBar_File_Export_ToJson"/>
+    </widget>
+    <addaction name="mMenuBar_File_OpenDB"/>
+    <addaction name="mMenuBar_File_OpenDB_ReadOnly"/>
+    <addaction name="separator"/>
+    <addaction name="mMenuBar_File_Import"/>
+    <addaction name="mMenuBar_File_Export"/>
+    <addaction name="separator"/>
+    <addaction name="mMenuBar_File_CloseDB"/>
+    <addaction name="mMenuBar_File_Exit"/>
+   </widget>
+   <widget class="QMenu" name="mMenuBar_About">
+    <property name="title">
+     <string>关于</string>
+    </property>
+    <addaction name="mMenuBar_About_OpenRepo"/>
+    <addaction name="mMenuBar_About_OpenIssuse"/>
+   </widget>
+   <widget class="QMenu" name="mMenuBar_Edit">
+    <property name="title">
+     <string>编辑</string>
+    </property>
+    <addaction name="mMenuBar_Edit_AddKeyValue"/>
+    <addaction name="mMenuBar_Edit_DeleteKeyValue"/>
+    <addaction name="separator"/>
+    <addaction name="mMenuBar_Edit_ReWriteKey"/>
+    <addaction name="mMenuBar_Edit_ReWriteValue"/>
+   </widget>
+   <addaction name="mMenuBar_File"/>
+   <addaction name="mMenuBar_Edit"/>
+   <addaction name="mMenuBar_About"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <action name="mBar_File_NewDB">
+   <property name="text">
+    <string>新建数据库</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="text">
+    <string>导出为文本</string>
+   </property>
+  </action>
+  <action name="mMenuBar_File_OpenDB">
+   <property name="text">
+    <string>打开数据库</string>
+   </property>
+  </action>
+  <action name="mMenuBar_File_OpenDB_ReadOnly">
+   <property name="text">
+    <string>打开数据库(只读)</string>
+   </property>
+  </action>
+  <action name="mMenuBar_File_Import_FromTxt">
+   <property name="text">
+    <string>从文件导入</string>
+   </property>
+  </action>
+  <action name="mMenuBar_File_Export_ToTxt">
+   <property name="text">
+    <string>导出为.txt</string>
+   </property>
+  </action>
+  <action name="mMenuBar_File_Export_ToJson">
+   <property name="text">
+    <string>导出为json</string>
+   </property>
+  </action>
+  <action name="action_9">
+   <property name="text">
+    <string>导出全部</string>
+   </property>
+  </action>
+  <action name="mMenuBar_File_CloseDB">
+   <property name="text">
+    <string>关闭数据库</string>
+   </property>
+  </action>
+  <action name="mMenuBar_File_Exit">
+   <property name="text">
+    <string>退出</string>
+   </property>
+  </action>
+  <action name="mMenuBar_About_OpenRepo">
+   <property name="text">
+    <string>仓库</string>
+   </property>
+  </action>
+  <action name="mMenuBar_About_OpenIssuse">
+   <property name="text">
+    <string>Bug反馈</string>
+   </property>
+  </action>
+  <action name="mMenuBar_Edit_DeleteKeyValue">
+   <property name="text">
+    <string>删除键值</string>
+   </property>
+  </action>
+  <action name="mMenuBar_Edit_ReWriteValue">
+   <property name="text">
+    <string>重写值</string>
+   </property>
+  </action>
+  <action name="mMenuBar_Edit_AddKeyValue">
+   <property name="text">
+    <string>插入键值</string>
+   </property>
+  </action>
+  <action name="mMenuBar_Edit_ReWriteKey">
+   <property name="text">
+    <string>重写键</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
