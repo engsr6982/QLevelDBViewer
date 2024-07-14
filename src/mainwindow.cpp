@@ -154,6 +154,7 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWi
         auto   it    = ui->mKeyList->item(row);
         string key   = x_str(it->text());
         string value = *mDB->get(key);
+        x_parse(value); // 格式化便于编辑
 
         QString qvalue =
             QInputDialog::getMultiLineText(this, "QLevelDBViewer", "输入 Value:", QString::fromStdString(value));
@@ -161,7 +162,11 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWi
             QMessageBox::warning(this, "QLevelDBViewer", "Value 不能为空！");
             return;
         }
-        mDB->set(key, x_str(qvalue));
+
+        value = x_str(qvalue);
+        x_parse(value, -1); // 去格式化
+
+        mDB->set(key, value);
         refreshUI(); // 刷新UI
     });
 
