@@ -187,7 +187,9 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWi
     });
     connect(ui->mKeyList, &QListWidget::itemSelectionChanged, [this]() {
         if (!mDB) return;
-        handleList(ui->mKeyList->currentItem()->text());
+        auto it = ui->mKeyList->currentItem();
+        if (!it) return;
+        handleList(it->text());
     });
 }
 
