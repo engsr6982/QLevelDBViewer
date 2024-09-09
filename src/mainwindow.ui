@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>830</width>
-    <height>540</height>
+    <width>795</width>
+    <height>530</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,139 +17,186 @@
    <bool>true</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QGroupBox" name="groupBox">
+   <widget class="QGroupBox" name="mFileBox">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>10</y>
-      <width>281</width>
-      <height>491</height>
+      <x>10</x>
+      <y>9</y>
+      <width>191</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="title">
-     <string>键</string>
+     <string>文件</string>
+    </property>
+    <widget class="QPushButton" name="mOpenDB">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>打开数据库</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="mCloseDB">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>20</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>关闭数据库</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="mActionBox">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>10</y>
+      <width>371</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>操作</string>
+    </property>
+    <widget class="QPushButton" name="mInsertKV">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>插入键值对</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="mDeleteKV">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>20</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>删除键值对</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="mReWriteKey">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>20</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>重写键</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="mReWriteValue">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>20</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>重写值</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="mOtherBox">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>10</y>
+      <width>191</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>其它</string>
+    </property>
+    <widget class="QPushButton" name="mSwitchViewer">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>原始视图</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="mBugReport">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>20</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Bug反馈</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="mDataBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>80</y>
+      <width>771</width>
+      <height>441</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>数据</string>
     </property>
     <widget class="QListWidget" name="mKeyList">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>20</y>
-       <width>256</width>
-       <height>461</height>
+       <width>241</width>
+       <height>411</height>
       </rect>
      </property>
      <property name="alternatingRowColors">
       <bool>true</bool>
      </property>
     </widget>
-   </widget>
-   <widget class="QGroupBox" name="groupBox_2">
-    <property name="geometry">
-     <rect>
-      <x>320</x>
-      <y>10</y>
-      <width>491</width>
-      <height>491</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>值</string>
-    </property>
     <widget class="QTextBrowser" name="mValueText">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>280</x>
        <y>20</y>
-       <width>471</width>
-       <height>461</height>
+       <width>481</width>
+       <height>411</height>
       </rect>
      </property>
     </widget>
    </widget>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>830</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="mMenuBar_File">
-    <property name="title">
-     <string>文件</string>
-    </property>
-    <addaction name="mMenuBar_File_OpenDB"/>
-    <addaction name="mMenuBar_File_CloseDB"/>
-    <addaction name="mMenuBar_File_Exit"/>
-   </widget>
-   <widget class="QMenu" name="mMenuBar_About">
-    <property name="title">
-     <string>关于</string>
-    </property>
-    <addaction name="mMenuBar_About_OpenRepo"/>
-    <addaction name="mMenuBar_About_OpenIssuse"/>
-   </widget>
-   <widget class="QMenu" name="mMenuBar_Edit">
-    <property name="title">
-     <string>编辑</string>
-    </property>
-    <addaction name="mMenuBar_Edit_AddKeyValue"/>
-    <addaction name="mMenuBar_Edit_DeleteKeyValue"/>
-    <addaction name="separator"/>
-    <addaction name="mMenuBar_Edit_ReWriteKey"/>
-    <addaction name="mMenuBar_Edit_ReWriteValue"/>
-   </widget>
-   <addaction name="mMenuBar_File"/>
-   <addaction name="mMenuBar_Edit"/>
-   <addaction name="mMenuBar_About"/>
-  </widget>
-  <action name="mMenuBar_File_OpenDB">
-   <property name="text">
-    <string>打开数据库</string>
-   </property>
-  </action>
-  <action name="mMenuBar_File_CloseDB">
-   <property name="text">
-    <string>关闭数据库</string>
-   </property>
-  </action>
-  <action name="mMenuBar_File_Exit">
-   <property name="text">
-    <string>退出</string>
-   </property>
-  </action>
-  <action name="mMenuBar_About_OpenRepo">
-   <property name="text">
-    <string>仓库</string>
-   </property>
-  </action>
-  <action name="mMenuBar_About_OpenIssuse">
-   <property name="text">
-    <string>Bug反馈</string>
-   </property>
-  </action>
-  <action name="mMenuBar_Edit_DeleteKeyValue">
-   <property name="text">
-    <string>删除键值</string>
-   </property>
-  </action>
-  <action name="mMenuBar_Edit_ReWriteValue">
-   <property name="text">
-    <string>重写值</string>
-   </property>
-  </action>
-  <action name="mMenuBar_Edit_AddKeyValue">
-   <property name="text">
-    <string>插入键值</string>
-   </property>
-  </action>
-  <action name="mMenuBar_Edit_ReWriteKey">
-   <property name="text">
-    <string>重写键</string>
-   </property>
-  </action>
  </widget>
  <resources/>
  <connections/>
