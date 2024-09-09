@@ -564,3 +564,4 @@ fabric.properties
 
 !CmakeLists.txt
 !CMakeLists.txt.user
+CmakeLists.txt.*
