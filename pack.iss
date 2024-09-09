@@ -32,12 +32,12 @@ ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
 ChangesAssociations=yes
 DisableProgramGroupPage=yes
-LicenseFile=D:\QLevelDBViewer\LICENSE
+LicenseFile=D:\Projects\QLevelDBViewer\LICENSE
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
 OutputDir=D:\QLevelDBViewer
 OutputBaseFilename=QLevelDBViewer-Setup
-SetupIconFile=D:\QLevelDBViewer\src\logo.ico
+SetupIconFile=D:\Projects\QLevelDBViewer\src\logo.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -50,8 +50,8 @@ Name: "chinesesimplified"; MessagesFile: "compiler:Languages\ChineseSimplified.i
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "D:\QLevelDBViewer\build\windows\x64\release\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\QLevelDBViewer\build\windows\x64\release\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "D:\Projects\QLevelDBViewer\build\windows\x64\release\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "D:\Projects\QLevelDBViewer\build\windows\x64\release\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Registry]
