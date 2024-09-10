@@ -4,6 +4,7 @@
 #include "nlohmann/json.hpp"
 #include "qaction.h"
 #include "qdialog.h"
+#include "qlineedit.h"
 #include "qlistwidget.h"
 #include "qmessagebox.h"
 #include "qnamespace.h"
@@ -136,8 +137,10 @@ void MainWindow::on_mCloseDB_clicked() {
 
 
 void MainWindow::on_mInsertKV_clicked() {
-    QString qkey   = QInputDialog::getText(this, "QLevelDBViewer", "输入 Key:");
-    QString qvalue = QInputDialog::getMultiLineText(this, "QLevelDBViewer", "输入 Value:");
+    bool    isOk   = false;
+    QString qkey   = QInputDialog::getText(this, "QLevelDBViewer", "输入 Key:", QLineEdit::Normal, QString(), &isOk);
+    QString qvalue = QInputDialog::getMultiLineText(this, "QLevelDBViewer", "输入 Value:", QString(), &isOk);
+    if (!isOk) return;
     if (qkey.isEmpty() || qvalue.isEmpty()) {
         QMessageBox::warning(this, "QLevelDBViewer", "Key 或 Value 不能为空！");
         return;
@@ -196,7 +199,9 @@ void MainWindow::on_mReWriteKey_clicked() {
     auto   it  = ui->mKeyList->item(row);
     string key = x_str(it->text());
 
-    QString qkey = QInputDialog::getText(this, "QLevelDBViewer", "修改 Key:", QLineEdit::Normal, it->text());
+    bool    isOK = false;
+    QString qkey = QInputDialog::getText(this, "QLevelDBViewer", "修改 Key:", QLineEdit::Normal, it->text(), &isOK);
+    if (!isOK) return;
     if (qkey.isEmpty()) {
         QMessageBox::warning(this, "QLevelDBViewer", "Key 不能为空！");
         return;
@@ -229,8 +234,10 @@ void MainWindow::on_mReWriteValue_clicked() {
     string value = *mDB->get(key);
     x_parse(value); // 格式化便于编辑
 
+    bool    isOk = false;
     QString qvalue =
-        QInputDialog::getMultiLineText(this, "QLevelDBViewer", "输入 Value:", QString::fromStdString(value));
+        QInputDialog::getMultiLineText(this, "QLevelDBViewer", "输入 Value:", QString::fromStdString(value), &isOk);
+    if (!isOk) return;
     if (qvalue.isEmpty()) {
         QMessageBox::warning(this, "QLevelDBViewer", "Value 不能为空！");
         return;
